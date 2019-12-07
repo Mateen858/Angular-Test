@@ -1,0 +1,30 @@
+<p>this is quote template</p>
+
+
+<p>
+    <!-- {{quote.Description}} -->
+</p>
+
+<!-- <mat-datepicker #myDatepicker></mat-datepicker>
+        <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+        <input [matDatepicker]="myDatepicker"> -->
+
+        <mat-form-field>
+               
+                <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+              </mat-form-field>
+
+{{selectedValue}}
+
+
+
+<mat-form-field>
+    <mat-select [(ngModel)]="selectedValue">
+        <mat-option *ngFor="let name of names" [value]="name" >
+                <img src="../../assets/mtn.JPG" alt="Smiley face" height="42" width="42" class="rounded-circle"> {{name}}
+          </mat-option>
+      </mat-select>
+</mat-form-field>
+  

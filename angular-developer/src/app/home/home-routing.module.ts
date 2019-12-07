@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { QuoteComponent } from "./quote.component";
+import { QuoteComponent } from "./quotes.component";
 
 
 const routes:Routes =[

@@ -1,0 +1,11 @@
+.quote-wrapper{
+    border: 1px solid black;
+    height: 300px;
+
+}
+.input-datepicker{
+    border-top:none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid grey;
+}
