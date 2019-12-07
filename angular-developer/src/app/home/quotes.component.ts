@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Quote } from "src/assets/quote";
 import { QuoteService } from "./quotes.service";
+import { User } from "./../../assets/user";
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 
@@ -43,7 +44,16 @@ public selectedField:string = "this is selected field";
  @Input() public quote:Quote
   
  public names : string  [] = ["Ali", "Ahmed", "Bilal"];
+ public users : User  [] = [
+   {firstname:"Rabia", lastname:"Yaseen", profilepic:"../../assets/mtn.JPG" },
+   {firstname:"Rana", lastname:"Mateen", profilepic:"../../assets/mtn.JPG" },
+   {firstname:"Muhammad", lastname:"Usman", profilepic:"" },
+   {firstname:"Swera", lastname:"Sehar", profilepic:"" }
+];
 
+ getShortName(firstname, lastname) {
+    return firstname.charAt(0) + lastname.charAt(0);
+}
 
 private getQuotes() {
     this.quoteservice.getAll().subscribe(response=>{
