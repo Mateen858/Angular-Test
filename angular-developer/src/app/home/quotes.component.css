@@ -1,12 +1,55 @@
 .quote-wrapper{
-    border: 1px solid black;
-    height: 200px;
+    /* border: 1px solid black; */
+    height: 160px;
     margin: 10px auto;
-    box-shadow: 5px 10px #888888;
+    padding: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4)
 }
-.input-datepicker{
-    border-top:none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 1px solid grey;
+::ng-deep .no-line .mat-form-field-underline {
+    display: none;
+  }
+
+
+::ng-deep .datepicker-width .mat-form-field-infix {
+    width: 90px;
+
+}
+
+
+::ng-deep .field-margin .mat-form-field-infix{
+    margin-top: -14px;
+}
+
+
+::ng-deep .field-margin2 .mat-form-field-infix{
+    margin-top: -20px;
+}
+
+::ng-deep .field-margin-text-area .mat-form-field-wrapper{
+    width: 236%;
+    margin-top: -38px;
+    color: #D8D8D5;
+}
+
+
+
+ /* .not-empty-select .mat-selected {
+    color: #D8D8D5 !important;
+  } */
+
+
+  :host /deep/.name-selectbox .mat-select-value-text {
+    color: #D8D8D5 !important;
+  }
+
+ ::ng-deep .select-arrow .mat-select-arrow {
+    border-left: none !important;
+    border-right: none!important;
+    border-top: none!important;
+}
+
+
+.imgbg{
+    background-color: pink;
 }

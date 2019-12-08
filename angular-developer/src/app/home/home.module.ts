@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatInputModule, MatCardModule} from "@angular/material";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { UserService } from "./users.service";
+import { CategoryService } from "./categories.service";
+
 
 
 
@@ -28,8 +31,9 @@ imports:[
     MatCardModule, 
     MatInputModule, 
     FormsModule
+
 ],
-providers:[QuoteService, MatDatepickerModule, MatSelectModule],
+providers:[QuoteService, MatDatepickerModule, MatSelectModule, UserService, CategoryService],
 })
 export class HomeModule{
 

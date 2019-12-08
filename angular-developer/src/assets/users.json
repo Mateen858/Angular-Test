@@ -1,5 +1,8 @@
 [
-    {"Id":1,"Name":"Rana Mateen", "Email": "a.mateen858@gmail.com", "Password":"abc123", "ProfilePic":""},
-    {"Id":1,"Name":"Ali Rehman", "Email": "ar@gmail.com", "Password":"abc123", "ProfilePic":""}
+    {"id":1,"firstname":"Rana", "lastname":"Mateen", "profilepic":"../../assets/1.jpeg"},
+    {"id":2,"firstname":"John", "lastname":"Steele", "profilepic":"assets/2.JPG"},
+    {"id":3,"firstname":"Lukasz", "lastname":"Krog", "profilepic":""},
+    {"id":4,"firstname":"Hysen", "lastname":"Alimi", "profilepic":""},
+    {"id":5,"firstname":"Mehmet", "lastname":"Nalbant", "profilepic":""}
 
 ]

@@ -1,46 +1,50 @@
-<div class="col-md-11 quote-wrapper">
+<div class="container">
+<p>{{users | json}}</p>
+<p>{{quotes | json}}</p>
+<p>{{categories | json}}</p>
+</div>
+
+
+
+<div class="col-md-4 quote-wrapper" *ngFor="let quote of quotes">
     <div class="row">
-        <div class="col-md-2">
-            <mat-form-field>
-                <mat-select [(ngModel)]="selectedValue">
-                    <mat-option *ngFor="let name of names" [value]="name">
-                        <img src="../../assets/mtn.JPG" alt="Smiley face" height="42" width="42" class="rounded-circle">
-                        {{name}}
+        <div class="col-md-6">
+            <mat-form-field class="no-line field-margin">
+                <mat-select [(ngModel)]="quote.userid" class="name-selectbox select-arrow">
+                    <mat-option *ngFor="let user of users" [value]="user.id" style="color:#D8D8D5">
+                            <img src="{{user.profilepic}}" height="25" width="25" class="rounded-circle" alt="{{getInitials(user.firstname, user.lastname)}}"/> 
+                            {{user.firstname}} {{user.lastname}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
 
         </div>
 
-        <div class="col-md-2 pull-right">
-            <mat-form-field>
+        <div class="col-md-6 text-right">
+            <mat-form-field class="no-line datepicker-width field-margin">
                 <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
-                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <input matInput [matDatepicker]="picker" [(ngModel)]="quote.dateadded">
             </mat-form-field>
 
         </div>
-
-
-
     </div>
-
-    <div class="row">
+    <div class="row" style="min-height: 60px">
         <div class="col-md-12">
-            <mat-form-field>
-                <textarea matInput placeholder="Textarea" style="width: 100%"></textarea>
+            <mat-form-field class="no-line field-margin-text-area">
+                <textarea matInput matInput
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="3" style="overflow:hidden" [(ngModel)]="quote.description"></textarea>
             </mat-form-field>
         </div>
     </div>
-
-
     <div class="row">
         <div class="col-md-2">
-            <mat-form-field>
-                <mat-select [(ngModel)]="selectedValue">
-                    <mat-option *ngFor="let name of names" [value]="name">
-                        <img src="../../assets/mtn.JPG" alt="Smiley face" height="42" width="42" class="rounded-circle">
-                        {{name}}
+            <mat-form-field class="no-line field-margin">
+                <mat-select [(ngModel)]="quote.category" class="select-arrow">
+                    <mat-option *ngFor="let category of categories" [value]="category">
+                        {{category}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -51,9 +55,13 @@
 
 <div class="people" *ngFor="let user of users">
     <div class="s-profile-icon">
-        <img src="{{user.profilepic}}" height="50" width="60" alt="{{getShortName(user.firstname, user.lastname)}}" />
+{{user.profilepic}}
+        <img src="{{user.profilepic}}" height="50" width="60" *ngIf="user.profilepic" class="rounded-circle"/>
+        <div *ngIf="!user.profilepic" class="rounded-circle text-center align-middle" style="background-color: pink; color:green; height:50px; width:60px">
+            {{getInitials(user.firstname, user.lastname)}}
+        </div>
     </div>
-    <div class="s-name">
+    <!-- <div class="s-name">
         {{getShortName(user.firstname, user.lastname)}}
-    </div>
+    </div> -->
 </div>
