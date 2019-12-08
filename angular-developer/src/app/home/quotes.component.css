@@ -1,7 +1,7 @@
 .quote-wrapper{
     /* border: 1px solid black; */
     height: 160px;
-    margin: 10px auto;
+    margin: 15px auto;
     padding: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4)
@@ -32,6 +32,14 @@
     color: #D8D8D5;
 }
 
+.initials{
+    background-color: hotpink; 
+    color: indigo; 
+    font-size: 15px; 
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
 
 
  /* .not-empty-select .mat-selected {
@@ -53,3 +61,33 @@
 .imgbg{
     background-color: pink;
 }
+
+
+
+.option1{
+    background:  url("https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg")  center / contain no-repeat;
+    white-space: nowrap
+  
+  }
+  
+  
+  .option2{
+    background:  url("https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg")  center / contain no-repeat;
+    white-space: nowrap;
+    display:inline
+  }
+
+  .Rana{
+    background:  url("../../assets/1.jpeg")  center / contain no-repeat;
+    white-space: nowrap;
+    display:inline;
+    border-radius: 50%;
+  }
+  .John{
+    background:  url("../../assets/2.jpg")  center / contain no-repeat;
+    white-space: nowrap;
+    display:inline;
+    border-radius: 50%;
+  }
+
+  

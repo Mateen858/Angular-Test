@@ -1,22 +1,63 @@
-<div class="container">
-<p>{{users | json}}</p>
-<p>{{quotes | json}}</p>
-<p>{{categories | json}}</p>
-</div>
+<div class="row">
+    <div class="col-md-4">
+        {{testmodel}}
+        <mat-select [(value)]="aaaa" [(ngModel)]="testmodel" [ngClass]="selected">
+            <mat-option>None</mat-option>
+            <mat-option value="{{user.firstname}}" *ngFor="let user of users" style="color:#D8D8D5">
+                <img with="10" height="10" src="{{user.profilepic}}">
+                {{user.firstname}} {{user.lastname}}
+            </mat-option>
+        </mat-select>
 
+    </div>
+</div>
 
 
 <div class="col-md-4 quote-wrapper" *ngFor="let quote of quotes">
     <div class="row">
         <div class="col-md-6">
-            <mat-form-field class="no-line field-margin">
-                <mat-select [(ngModel)]="quote.userid" class="name-selectbox select-arrow">
-                    <mat-option *ngFor="let user of users" [value]="user.id" style="color:#D8D8D5">
-                            <img src="{{user.profilepic}}" height="25" width="25" class="rounded-circle" alt="{{getInitials(user.firstname, user.lastname)}}"/> 
+            <div class="row">
+                <div class="col-md-2" *ngIf="quote.User.profilepic">
+                    <img src="{{quote.User.profilepic}}" height="25" width="25" class="rounded-circle">
+                </div>
+                <div class="col-md-2" *ngIf="!quote.User.profilepic">
+                    <div class="rounded-circle; text-center initials">
+                            {{getInitials(quote.User.firstname, quote.User.lastname)}}
+                    </div>   
+                    </div>
+
+                <div class="col-md-10">
+                    <mat-select [(ngModel)]="quote.userid" class="name-selectbox select-arrow" (selectionChange)="updateUser(quote)" >
+                        <mat-option *ngFor="let user of users" [value]="user.id" value="test" style="color:#D8D8D5"
+                            >
+                            <p>
+                                <span class="rounded-circle; text-center initials" *ngIf="!user.profilepic">
+                                    {{getInitials(user.firstname, user.lastname)}}
+                                </span>
+                                <span *ngIf="user.profilepic">
+                                    <img src="{{user.profilepic}}" height="25" width="25" class="rounded-circle" />
+                                </span>
+                                <span>
+                                    {{user.firstname}} {{user.lastname}}
+                                </span>
+                            </p>
+
+
+                            <!-- <div *ngIf="user.profilepic">
+                            <img src="{{user.profilepic}}" height="25" width="25" class="rounded-circle"/> 
                             {{user.firstname}} {{user.lastname}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+                    </div>   
+                    <div *ngIf="!user.profilepic">
+                            <span class="rounded-circle; text-center initials">
+                                {{getInitials(user.firstname, user.lastname)}}
+                            </span>
+                            {{user.firstname}} {{user.lastname}}
+                    </div> -->
+                        </mat-option>
+                    </mat-select>
+                </div>
+            </div>
+
 
         </div>
 
@@ -32,10 +73,8 @@
     <div class="row" style="min-height: 60px">
         <div class="col-md-12">
             <mat-form-field class="no-line field-margin-text-area">
-                <textarea matInput matInput
-                cdkTextareaAutosize
-                cdkAutosizeMinRows="1"
-                cdkAutosizeMaxRows="3" style="overflow:hidden" [(ngModel)]="quote.description"></textarea>
+                <textarea matInput matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="3"
+                    style="overflow:hidden" [(ngModel)]="quote.description"></textarea>
             </mat-form-field>
         </div>
     </div>
@@ -51,17 +90,4 @@
         </div>
     </div>
 
-</div>
-
-<div class="people" *ngFor="let user of users">
-    <div class="s-profile-icon">
-{{user.profilepic}}
-        <img src="{{user.profilepic}}" height="50" width="60" *ngIf="user.profilepic" class="rounded-circle"/>
-        <div *ngIf="!user.profilepic" class="rounded-circle text-center align-middle" style="background-color: pink; color:green; height:50px; width:60px">
-            {{getInitials(user.firstname, user.lastname)}}
-        </div>
-    </div>
-    <!-- <div class="s-name">
-        {{getShortName(user.firstname, user.lastname)}}
-    </div> -->
 </div>

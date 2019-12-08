@@ -1,6 +1,6 @@
 [
     {"id":1,"firstname":"Rana", "lastname":"Mateen", "profilepic":"../../assets/1.jpeg"},
-    {"id":2,"firstname":"John", "lastname":"Steele", "profilepic":"assets/2.JPG"},
+    {"id":2,"firstname":"John", "lastname":"Steele", "profilepic":"../../assets/2.jpg"},
     {"id":3,"firstname":"Lukasz", "lastname":"Krog", "profilepic":""},
     {"id":4,"firstname":"Hysen", "lastname":"Alimi", "profilepic":""},
     {"id":5,"firstname":"Mehmet", "lastname":"Nalbant", "profilepic":""}

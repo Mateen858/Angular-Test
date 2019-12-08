@@ -19,6 +19,7 @@ export const MY_FORMATS = {
 };
 
 
+
 @Component({
   selector: 'app-quote',
   templateUrl: './quotes.component.html',
@@ -47,6 +48,15 @@ export class QuoteComponent implements OnInit {
   public categories : string[];
 
 
+  public updateUser(quote:Quote){
+    let newuser:User;
+    this.users.forEach(element => {
+      if(element.id==quote.userid)
+      newuser = element;
+    });
+quote.User = newuser;
+
+  }
 
 
   getInitials(firstname, lastname) {
@@ -63,6 +73,11 @@ private getUsers(){
 this.users = response;
   });
 }
+
+public updatepic(){
+  alert("chagned");
+}
+
 
 private getCategories(){
   this.categoryservice.getAll().subscribe(response=>{
