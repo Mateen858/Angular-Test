@@ -15,7 +15,7 @@
     {
         "id":2, 
         "description": "Well done is better than well said", 
-        "dateadded":"2019-12-01T19:00:00", 
+        "dateadded":"2019-12-05T19:00:00", 
         "category":"Motivational", 
         "userid":1, 
         "User":{
@@ -28,7 +28,7 @@
     {
         "id":3, 
         "description": "With the new day comes new strength and new thoughts", 
-        "dateadded":"2019-12-01T19:00:00", 
+        "dateadded":"2019-12-06T19:00:00", 
         "category":"Motivational", 
         "userid":2,
         "User":{
@@ -41,7 +41,7 @@
     {
         "id":4, 
         "description": "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.", 
-        "dateadded":"2019-12-01T19:00:00", 
+        "dateadded":"2019-12-07T19:00:00", 
         "category":"Life", 
         "userid":2,
         "User": {
@@ -54,7 +54,7 @@
     {
         "id":5, 
         "description": "You only live once, but if you do it right, once is enough", 
-        "dateadded":"2019-12-01T19:00:00", 
+        "dateadded":"2019-12-08T19:00:00", 
         "category":"Life", 
         "userid":3,
         "User": {
@@ -67,7 +67,7 @@
     {
         "id":6, 
         "description": "In three words I can sum up everything I've learned about life: it goes on.", 
-        "dateadded":"2019-12-01T19:00:00", 
+        "dateadded":"2019-12-09T19:00:00", 
         "category":"Life", 
         "userid":4,
         "User":    {
@@ -95,7 +95,7 @@
     {
         "id":8, 
         "description": "When we strive to become better than we are, everything around us becomes better too.", 
-        "dateadded":"2019-12-01T19:00:00", 
+        "dateadded":"2019-12-02T19:00:00", 
         "category":"Inspirational", 
         "userid":5,
         "User":{
@@ -108,7 +108,7 @@
     {
         "id":9, 
         "description": "Opportunity is missed by most people because it is dressed in overalls and looks like work.", 
-        "dateadded":"2019-12-01T19:00:00", 
+        "dateadded":"2019-12-02T19:00:00", 
         "category":"Inspirational", 
         "userid":1,
         "User":{
@@ -121,7 +121,7 @@
     {
         "id":10, 
         "description": "You've got to get up every morning with determination if you're going to go to bed with satisfaction.", 
-        "dateadded":"2019-12-01T19:00:00", 
+        "dateadded":"2019-12-03T19:00:00", 
         "category":"Inspirational", 
         "userid":1,
         "User":{

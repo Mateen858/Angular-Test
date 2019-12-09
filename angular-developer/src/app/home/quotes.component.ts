@@ -6,6 +6,7 @@ import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/mat
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { UserService } from "./users.service";
 import { CategoryService } from "./categories.service";
+
 export const MY_FORMATS = {
   parse: {
     dateInput: 'D',
@@ -18,8 +19,6 @@ export const MY_FORMATS = {
   },
 };
 
-
-
 @Component({
   selector: 'app-quote',
   templateUrl: './quotes.component.html',
@@ -30,34 +29,26 @@ export const MY_FORMATS = {
       useClass: MomentDateAdapter,
       deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
     },
-
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ],
 })
 export class QuoteComponent implements OnInit {
-  constructor(public quoteservice: QuoteService, public userservice: UserService, public categoryservice : CategoryService) 
-  { 
-
+  constructor(public quoteservice: QuoteService, public userservice: UserService, public categoryservice: CategoryService) {
   }
 
   public quotes: Quote[];
-  @Input() public quote: Quote
-  public names: string[] = ["Ali", "Ahmed", "Bilal"];
   public users: User[];
-  public selectedUser : User; 
-  public categories : string[];
+  public selectedUser: User;
+  public categories: string[];
 
-
-  public updateUser(quote:Quote){
-    let newuser:User;
+  public updateUser(quote: Quote) {
+    let newuser: User;
     this.users.forEach(element => {
-      if(element.id==quote.userid)
-      newuser = element;
+      if (element.id == quote.userid)
+        newuser = element;
     });
-quote.User = newuser;
-
+    quote.User = newuser;
   }
-
 
   getInitials(firstname, lastname) {
     return firstname.charAt(0) + lastname.charAt(0);
@@ -68,22 +59,17 @@ quote.User = newuser;
       this.quotes = response;
     });
   }
-private getUsers(){
-  this.userservice.getAll().subscribe(response=>{
-this.users = response;
-  });
-}
+  private getUsers() {
+    this.userservice.getAll().subscribe(response => {
+      this.users = response;
+    });
+  }
 
-public updatepic(){
-  alert("chagned");
-}
-
-
-private getCategories(){
-  this.categoryservice.getAll().subscribe(response=>{
-this.categories = response;
-  });
-}
+  private getCategories() {
+    this.categoryservice.getAll().subscribe(response => {
+      this.categories = response;
+    });
+  }
 
 
   ngOnInit() {

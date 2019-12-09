@@ -1,35 +1,20 @@
-<!-- <div class="row">
-    <div class="col-md-4">
-        {{testmodel}}
-        <mat-select [(value)]="aaaa" [(ngModel)]="testmodel" [ngClass]="selected">
-            <mat-option>None</mat-option>
-            <mat-option value="{{user.firstname}}" *ngFor="let user of users" style="color:#D8D8D5">
-                <img with="10" height="10" src="{{user.profilepic}}">
-                {{user.firstname}} {{user.lastname}}
-            </mat-option>
-        </mat-select>
-
-    </div>
-</div> -->
-
-
 <div class="col-md-4 quote-wrapper" *ngFor="let quote of quotes">
     <div class="row">
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-2" *ngIf="quote.User.profilepic">
-                    <img src="{{quote.User.profilepic}}" height="25" width="25" class="rounded-circle">
+                    <img src="{{quote.User.profilepic}}" height="25" width="25" class="rounded-circle" name="userimage"
+                        id="uimg">
                 </div>
                 <div class="col-md-2" *ngIf="!quote.User.profilepic">
                     <div class="rounded-circle; text-center initials">
-                            {{getInitials(quote.User.firstname, quote.User.lastname)}}
-                    </div>   
+                        {{getInitials(quote.User.firstname, quote.User.lastname)}}
                     </div>
-
+                </div>
                 <div class="col-md-10">
-                    <mat-select [(ngModel)]="quote.userid" class="name-selectbox select-arrow" (selectionChange)="updateUser(quote)" >
-                        <mat-option *ngFor="let user of users" [value]="user.id" value="test" style="color:#D8D8D5"
-                            >
+                    <mat-select [(ngModel)]="quote.userid" class="name-selectbox select-arrow"
+                        (selectionChange)="updateUser(quote)">
+                        <mat-option *ngFor="let user of users" [value]="user.id" value="test" style="color:#D8D8D5">
                             <p>
                                 <span class="rounded-circle; text-center initials" *ngIf="!user.profilepic">
                                     {{getInitials(user.firstname, user.lastname)}}
@@ -41,33 +26,17 @@
                                     {{user.firstname}} {{user.lastname}}
                                 </span>
                             </p>
-
-
-                            <!-- <div *ngIf="user.profilepic">
-                            <img src="{{user.profilepic}}" height="25" width="25" class="rounded-circle"/> 
-                            {{user.firstname}} {{user.lastname}}
-                    </div>   
-                    <div *ngIf="!user.profilepic">
-                            <span class="rounded-circle; text-center initials">
-                                {{getInitials(user.firstname, user.lastname)}}
-                            </span>
-                            {{user.firstname}} {{user.lastname}}
-                    </div> -->
                         </mat-option>
                     </mat-select>
                 </div>
             </div>
-
-
         </div>
-
         <div class="col-md-6 text-right">
             <mat-form-field class="no-line datepicker-width field-margin">
                 <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
                 <input matInput [matDatepicker]="picker" [(ngModel)]="quote.dateadded">
             </mat-form-field>
-
         </div>
     </div>
     <div class="row" style="min-height: 60px">
@@ -89,5 +58,4 @@
             </mat-form-field>
         </div>
     </div>
-
 </div>
